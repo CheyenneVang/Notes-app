@@ -1,6 +1,7 @@
 const notes = require('./notes.js');
 const chalk = require("chalk"); // npm i chalk@2.4.1 version
 const yargs = require('yargs');
+
 // Add command
 yargs.command({
     command: 'add',
@@ -21,6 +22,7 @@ yargs.command({
         notes.addNote(argv.title, argv.body)
     }
 });
+
 // Remove command
 yargs.command({
     command: 'remove',
@@ -36,6 +38,7 @@ yargs.command({
         notes.removeNote(argv.title)
     }
 })
+
 // Read command
 yargs.command({
     command: 'read',
@@ -51,6 +54,7 @@ yargs.command({
         notes.readNote(argv.title)
     }
 })
+
 // List command
 yargs.command({
     command: 'list',
@@ -59,9 +63,5 @@ yargs.command({
         notes.listNotes()
     } 
 })
+
 console.log(yargs.argv); // argv is a property of yargs, when we access the argv propety on yargs, yargs knows to parse the arguments
-
-
-
-
-
